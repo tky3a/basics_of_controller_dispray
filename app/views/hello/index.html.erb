@@ -1,0 +1,11 @@
+<h1><%= @title %></h1>
+
+<p><%= @msg %></p>
+<!--htmlでフォーム作成(ラジオボタン)-->
+<!--form_tag: helloコントローラーのindexアクションにpostする宣言をしている-->
+<%= form_tag(controller: "hello", action: "index") do %>
+  <%= select_tag('s1',
+      options_for_select(["Windows", "macOS", "Linux"]),
+                        { size: 5, multiple: true }) %>
+  <%= submit_tag('送信')%>
+<% end %>

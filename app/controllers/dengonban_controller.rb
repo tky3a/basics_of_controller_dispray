@@ -11,8 +11,9 @@ class DengonbanController < ApplicationController
       # 空のハッシュ{}を@dengon_dataに代入
       @dengon_data = Hash.new
     end
+    # binding.pry
     @dengon_data.each do |key, obj|
-      if Time.now.to_i - key.to_i > 24 * 60 * 60 then
+      if Time.now.to_i - key.to_i > 24*60*60
         @dengon_data.delete(key)
       end
     end
